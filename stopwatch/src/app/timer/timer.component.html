@@ -1,0 +1,49 @@
+<div id='timer'>
+  <!-- Background of LCD display -->
+  <div class='display'>
+    <p>88:88.88</p>
+  </div>
+  <!------------------------------->
+
+  <!-- Foreground of LCD display with active elements -->
+  <div class='display' id='display-active'>
+    <p>{{state.minutes | convertsToTime}}</p>
+    <p *ngIf="state.delimetersShown">:</p>
+    <p *ngIf="!state.delimetersShown">&nbsp;</p>
+    <p>{{state.seconds | convertsToTime}}</p>
+    <p *ngIf="state.delimetersShown">.</p>
+    <p *ngIf="!state.delimetersShown">&nbsp;</p>
+    <p>{{state.milliseconds | convertsToTime}}</p>
+  </div>
+  <!---------------------------------------------------->
+
+  <!-- Buttons to control timer -->
+  <div id='controls'>
+    <button class='big-button' (click)="toggleTime()">
+      <div *ngIf="!state.running" class='big-button-value'>
+        <i class="fas fa-play fa-xs"></i>
+        Play
+      </div>
+      <div *ngIf="state.running" class='big-button-value'>
+        <i class="fas fa-pause fa-xs"></i>
+        Pause
+      </div>
+    </button>
+    <button class='small-button' (click)="addTimestamp()">
+      <i class="fas fa-stopwatch fa-2x"></i>
+    </button>
+    <button class='small-button right-button' (click)="resetAll()">
+      <i class="fas fa-trash-alt fa-2x"></i>
+    </button>
+  </div>
+  <!-------------------------------->
+
+  <!-- Timestamps list container -->
+  <div id='timestamps-container'>
+    <app-timestamp *ngFor='let timestamp of timestamps'
+                   [timestamp]="timestamp"
+                   (onRemoveTimestamp)="onRemoveTimestamp($event)">
+    </app-timestamp>
+  </div>
+  <!------------------------------->
+</div>

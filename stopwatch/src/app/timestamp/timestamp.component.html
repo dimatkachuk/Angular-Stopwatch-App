@@ -1,0 +1,12 @@
+<div class='timestamp-container'>
+  <!-- Timestamp with LCD effect -->
+  <div class='timestamp'>
+    <p id='timestamp-background'>88:88.88</p>
+    <p>{{timestamp.minutes | convertsToTime}}:{{timestamp.seconds | convertsToTime}}.{{timestamp.milliseconds | convertsToTime}}</p>
+  </div>
+  <!------------------------------->
+
+  <!-- Button which appears on hover and removes timestamp -->
+  <button *ngIf="isButtonVisible" (click)="removeTimestamp(timestamp.id)">REMOVE</button>
+  <!--------------------------------------------------------->
+</div>

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'digital';
+    src: url('assets/fonts/digital.ttf');
+}
+
+body {
+  background-color: #2B2B2D;
+}
+
+/* apply border to all timestamps if not last*/
+app-timestamp:nth-last-of-type(n+2) .timestamp-container {
+  border-bottom: 1px solid #424244;
+}

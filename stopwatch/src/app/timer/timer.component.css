@@ -1,0 +1,64 @@
+#timer {
+  position: relative;
+  width: 400px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #1E1E20;
+  box-shadow: inset 0 0 15px #000000;
+}
+
+.display {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 105px;
+  font-family: digital;
+  font-size: 45px;
+  color: #344922;
+}
+
+.display p {
+  margin: 0;
+}
+
+#display-active p {
+  color: #7CD838;
+}
+
+#controls {
+  padding-top: 105px;
+  display: flex;
+  width: 100%;
+  height: 55px;
+  border-radius: 0 0 10px 10px;
+}
+
+.big-button,
+.small-button {
+  background-color: #D8D7DC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: grey;
+}
+
+.big-button {
+  width: 240px;
+  border-radius: 0 0 0 10px;
+  font-size: 20px;
+}
+
+.small-button {
+  width: 80px;
+}
+
+.right-button {
+  border-radius: 0 0 10px 0;
+}
+
+#timestamps-container {
+  padding-top: 15px;
+}
